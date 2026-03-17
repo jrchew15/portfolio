@@ -1,11 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "./assets/vite.svg";
+import heroImg from "./assets/hero.png";
+import "./App.css";
+
+async function loadPreline() {
+  return import("preline");
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation();
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const initPreline = async () => {
+      await loadPreline();
+
+      if (
+        window.HSStaticMethods &&
+        typeof window.HSStaticMethods.autoInit === "function"
+      ) {
+        window.HSStaticMethods.autoInit();
+      }
+    };
+
+    initPreline();
+  }, [location.pathname]);
 
   return (
     <>
@@ -22,7 +42,8 @@ function App() {
           </p>
         </div>
         <button
-          className="counter"
+          type="button"
+          className="text-foreground-inverse inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-teal-500 px-4 py-3 text-sm font-medium hover:bg-teal-600 disabled:pointer-events-none disabled:opacity-50"
           onClick={() => setCount((count) => count + 1)}
         >
           Count is {count}
@@ -115,7 +136,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
