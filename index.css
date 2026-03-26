@@ -1,4 +1,37 @@
 @import "tailwindcss";
 
-/* Preline UI */
-@import "./node_modules/preline/variants.css";
+@theme {
+  --color-jetblack-500: #1b2432;
+
+  --color-rosekiss-100: #f7cdda;
+  --color-rosekiss-200: #f3b4c8;
+  --color-rosekiss-300: #ef9bb6;
+  --color-rosekiss-400: #eb82a3;
+  --color-rosekiss-500: #e86a92;
+  --color-rosekiss-600: #e0386e;
+  --color-rosekiss-700: #c21e52;
+  --color-rosekiss-800: #92173e;
+  --color-rosekiss-900: #610f29;
+
+  --color-steelblue-100: #bfd3e1;
+  --color-steelblue-200: #a0bdd2;
+  --color-steelblue-300: #80a7c3;
+  --color-steelblue-400: #6091b4;
+  --color-steelblue-500: #4a7b9d;
+  --color-steelblue-600: #3d6582;
+  --color-steelblue-700: #315168;
+  --color-steelblue-800: #253d4e;
+  --color-steelblue-900: #182934;
+
+  --color-mutedteal-100: #d0ddd1;
+  --color-mutedteal-200: #b8ccbb;
+  --color-mutedteal-300: #a0baa4;
+  --color-mutedteal-400: #89a98d;
+  --color-mutedteal-500: #709775;
+  --color-mutedteal-600: #5d8062;
+  --color-mutedteal-700: #4a674e;
+  --color-mutedteal-800: #384d3b;
+  --color-mutedteal-900: #253327;
+
+  --color-ghostwhite-500: #fafaff;
+}
