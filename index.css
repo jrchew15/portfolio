@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  --color-jetblack-100: #d0d8e6;
+  --color-jetblack-400: #344561;
+  --color-jetblack-450: #28354a;
   --color-jetblack-500: #1b2432;
 
   --color-rosekiss-100: #f7cdda;

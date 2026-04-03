@@ -107,7 +107,9 @@ code {
 }
 
 .sidebar-button {
-  @apply w-80 gap-x-2 rounded-r-lg px-4 py-3 text-center text-lg font-medium;
+  @apply relative h-12 text-lg font-medium transition-[width] duration-300 ease-in;
 }
 
-
+.sidebar-button-content {
+  @apply transition-opacity duration-300 ease-in;
+}
