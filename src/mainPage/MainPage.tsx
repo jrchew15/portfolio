@@ -4,7 +4,7 @@ import { SideBarButtons } from "./SideBar";
 
 function MainPage() {
   return (
-    <Container className="flex min-h-70">
+    <Container className="flex max-h-screen">
       <SideBarButtons />
       <Body />
     </Container>

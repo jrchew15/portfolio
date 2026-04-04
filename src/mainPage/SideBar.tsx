@@ -76,9 +76,8 @@ export const SideBarButtons = () => {
     "hover:border-r-ghostwhite-500",
     "border-r-jetblack-400",
     "duration:2500",
-    "h-dvh",
+    "h-screen",
     "border-r-2",
-    "py-2",
     "transition-all",
     "ease-in",
     {
