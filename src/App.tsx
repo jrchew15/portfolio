@@ -1,31 +1,11 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 
-async function loadPreline() {
-  return import("preline");
-}
-
 function App() {
-  const location = useLocation();
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    const initPreline = async () => {
-      await loadPreline();
-
-      if (
-        window.HSStaticMethods &&
-        typeof window.HSStaticMethods.autoInit === "function"
-      ) {
-        window.HSStaticMethods.autoInit();
-      }
-    };
-
-    initPreline();
-  }, [location.pathname]);
 
   return (
     <>
