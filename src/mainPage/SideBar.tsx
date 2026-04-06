@@ -5,14 +5,20 @@ import {
   LucideArrowLeftToLine,
   LucideArrowRightToLine,
   LucideScrollText,
+  LucideHouse,
+  LucideInfo,
 } from "lucide-react";
+import Meeple from "./Meeple";
+import { useNavigate } from "react-router";
 
 const SideBarButton = ({
   title,
   expanded,
   groupHovered,
+  onClick,
 }: {
   title: string;
+  onClick?: () => void;
   expanded?: Boolean;
   groupHovered?: Boolean;
 }) => {
@@ -44,21 +50,43 @@ const SideBarButton = ({
     "ml-1.5": true,
   });
 
+  const Icon = (props: { name: string }) => {
+    if (props.name === "Home") {
+      return <LucideHouse className={iconClassNames} color="#fafaff" />;
+    }
+    if (props.name === "About Me") {
+      return <LucideInfo className={iconClassNames} color="#fafaff" />;
+    }
+    if (props.name === "Carcassone") {
+      return (
+        <div className={iconClassNames}>
+          <Meeple />
+        </div>
+      );
+    }
+    return <LucideScrollText className={iconClassNames} color="#fafaff" />;
+  };
+
   const buttonContent = (
     <>
       <div className={iconClassNames}>
-        <LucideScrollText className={iconClassNames} color="#fafaff" />
+        <Icon name={title} />
       </div>
       <span className={titleClassNames}>{title}</span>
     </>
   );
 
-  return <button className={buttonClassNames}>{buttonContent}</button>;
+  return (
+    <button className={buttonClassNames} onClick={onClick}>
+      {buttonContent}
+    </button>
+  );
 };
 
 export const SideBarButtons = () => {
   const [expandAllButtons, setExpandAllButtons] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   const closeStyle = clsx("absolute", "transition-opacity", "duration-300", {
     "opacity-0": !expandAllButtons,
@@ -101,9 +129,20 @@ export const SideBarButtons = () => {
       >
         <Container className="flex w-fit flex-col items-start justify-between space-y-2">
           <SideBarButton
+            title="Home"
+            expanded={expandAllButtons}
+            groupHovered={isHovered}
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+          <SideBarButton
             title="Resume"
             expanded={expandAllButtons}
             groupHovered={isHovered}
+            onClick={() => {
+              navigate("/resume");
+            }}
           />
           <SideBarButton
             title="About Me"
