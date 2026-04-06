@@ -26,7 +26,7 @@ export const Body = () => {
 
 function Scene() {
   return (
-    <div className="absolute h-full w-full">
+    <div className="absolute top-0 h-full w-full">
       <Canvas
         shadows
         camera={{
@@ -47,7 +47,7 @@ function Scene() {
           receiveShadow
         >
           <planeGeometry args={[500, 50]} />
-          <meshStandardMaterial color="gray" />
+          <meshPhongMaterial color="gray" />
         </mesh>
       </Canvas>
     </div>
