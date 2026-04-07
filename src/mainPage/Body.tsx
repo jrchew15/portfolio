@@ -39,7 +39,7 @@ function Scene() {
         <ambientLight intensity={0.2} />
         <mesh position={[4, 1, 8]} castShadow>
           <sphereGeometry />
-          <meshPhongMaterial color="gray" />
+          <meshPhongMaterial color="#344561" />
         </mesh>
         <mesh
           rotation={[-Math.PI / 2, 0, 0]}
@@ -47,7 +47,7 @@ function Scene() {
           receiveShadow
         >
           <planeGeometry args={[500, 50]} />
-          <meshPhongMaterial color="gray" />
+          <meshStandardMaterial color="#344561" />
         </mesh>
       </Canvas>
     </div>
