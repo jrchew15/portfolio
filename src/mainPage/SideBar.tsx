@@ -20,20 +20,10 @@ const SideBarButton = ({
   onClick?: () => void;
   expanded?: Boolean;
 }) => {
-  const buttonClassNames = clsx(
-    "sidebar-button",
-    "flex",
-    "flex-start",
-    "items-center",
-    "hover:bg-jetblack-450",
-    "transition-all",
-    "duration-300",
-    "ease-in",
-    {
-      ["w-12"]: !expanded,
-      ["w-60"]: expanded,
-    },
-  );
+  const buttonClassNames = clsx("sidebar-button", "hover:bg-jetblack-450", {
+    ["w-12"]: !expanded,
+    ["w-60"]: expanded,
+  });
 
   const titleClassNames = clsx("sidebar-button-title", {
     "opacity-0": !expanded,
@@ -86,15 +76,10 @@ export const SideBarButtons = () => {
   });
 
   const sidebarClasses = clsx(
-    "content-box",
+    "sidebar",
+    "bg-jetblack-500",
     "hover:border-r-ghostwhite-500",
     "border-r-jetblack-400",
-    "duration-300",
-    "h-screen",
-    "border-r-2",
-    "transition-all",
-    "ease-in",
-    "mx-0",
     "container",
     {
       ["w-13"]: !expandAllButtons,

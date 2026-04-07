@@ -107,12 +107,16 @@ code {
   }
 }
 
+.sidebar {
+  @apply z-10 mx-0 h-screen border-r-2 transition-all duration-300 ease-in;
+}
+
 .sidebar-button {
-  @apply relative h-12 text-lg font-medium;
+  @apply relative flex h-12 items-center justify-start text-lg font-medium transition-all duration-300 ease-in;
 }
 
 .sidebar-button-title {
-  @apply w-48 overflow-hidden text-center text-clip whitespace-nowrap transition-opacity duration-300 ease-in;
+  @apply w-48 overflow-hidden text-center text-clip whitespace-nowrap transition-opacity duration-200 ease-in;
 }
 
 .sidebar-toggle {

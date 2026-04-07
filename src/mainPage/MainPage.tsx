@@ -7,7 +7,7 @@ function MainPage() {
   return (
     <div className="flex max-h-screen min-w-screen">
       <SideBarButtons />
-      <div id="content" className="relative w-full">
+      <div id="content" className="w-full">
         <Routes>
           <Route path="/">
             <Route index element={<Body />} />
