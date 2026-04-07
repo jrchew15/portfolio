@@ -26,7 +26,7 @@ export const Body = () => {
 
 function Scene() {
   return (
-    <div className="absolute top-0 h-full w-full">
+    <div className="absolute top-0 left-13 h-full w-[calc(100dvw-(--spacing(13)))]">
       <Canvas
         shadows
         camera={{
