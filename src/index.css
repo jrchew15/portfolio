@@ -108,9 +108,13 @@ code {
 }
 
 .sidebar-button {
-  @apply relative h-12 text-lg font-medium transition-[width] duration-300 ease-in;
+  @apply relative h-12 text-lg font-medium;
 }
 
-.sidebar-button-content {
-  @apply transition-opacity duration-300 ease-in;
+.sidebar-button-title {
+  @apply w-48 overflow-hidden text-center text-clip whitespace-nowrap transition-opacity duration-300 ease-in;
+}
+
+.sidebar-toggle {
+  @apply absolute my-2 ml-2 flex max-h-11 min-h-11 max-w-11 min-w-11 cursor-pointer items-center justify-center rounded-full p-0 transition-all duration-300 ease-in;
 }

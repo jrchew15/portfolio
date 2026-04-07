@@ -1,14 +1,13 @@
 import { Route, Routes } from "react-router";
-import { Container } from "../common/Container";
 import { Body } from "./Body";
 import { SideBarButtons } from "./SideBar";
 import ResumePdfDisplay from "../resume/ResumePdfDisplay";
 
 function MainPage() {
   return (
-    <Container className="flex max-h-screen">
+    <div className="flex max-h-screen min-w-screen">
       <SideBarButtons />
-      <div id="content" className="relative">
+      <div id="content" className="relative w-full">
         <Routes>
           <Route path="/">
             <Route index element={<Body />} />
@@ -16,7 +15,7 @@ function MainPage() {
           </Route>
         </Routes>
       </div>
-    </Container>
+    </div>
   );
 }
 
